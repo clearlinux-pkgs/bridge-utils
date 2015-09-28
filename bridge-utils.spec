@@ -4,7 +4,7 @@
 #
 Name     : bridge-utils
 Version  : 1.5
-Release  : 7
+Release  : 8
 URL      : http://downloads.sourceforge.net/bridge/bridge-utils-1.5.tar.gz
 Source0  : http://downloads.sourceforge.net/bridge/bridge-utils-1.5.tar.gz
 Summary  : No detailed summary available
