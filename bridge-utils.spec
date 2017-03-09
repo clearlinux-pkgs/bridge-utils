@@ -4,29 +4,18 @@
 #
 Name     : bridge-utils
 Version  : 1.5
-Release  : 10
-URL      : http://downloads.sourceforge.net/bridge/bridge-utils-1.5.tar.gz
-Source0  : http://downloads.sourceforge.net/bridge/bridge-utils-1.5.tar.gz
+Release  : 11
+URL      : https://sourceforge.net/projects/bridge/files/bridge/bridge-utils-1.5.tar.gz
+Source0  : https://sourceforge.net/projects/bridge/files/bridge/bridge-utils-1.5.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
-License  : GPL-2.0+ GPL-2.0
-Requires: bridge-utils-bin
+License  : GPL-2.0 GPL-2.0+
 Requires: bridge-utils-doc
-BuildRequires : automake
-BuildRequires : libtool
 Patch1: bridge-utils-1.5-linux_3.8_fix-1.patch
 
 %description
 This version of the bridge utilities is for Linux 2.4 and 2.6,
 it uses the sysfs interface if possible on Linux 2.6.
-
-%package bin
-Summary: bin components for the bridge-utils package.
-Group: Binaries
-
-%description bin
-bin components for the bridge-utils package.
-
 
 %package doc
 Summary: doc components for the bridge-utils package.
@@ -41,19 +30,18 @@ doc components for the bridge-utils package.
 %patch1 -p1
 
 %build
-%reconfigure --disable-static 
-make V=1 %{?_smp_mflags}  
+export LANG=C
+export SOURCE_DATE_EPOCH=1489102010
+%reconfigure --disable-static
+make V=1  %{?_smp_mflags}
 
 %install
+export SOURCE_DATE_EPOCH=1489102010
 rm -rf %{buildroot}
-%make_install 
+%make_install
 
 %files
 %defattr(-,root,root,-)
-
-%files bin
-%defattr(-,root,root,-)
-/usr/bin/brctl
 
 %files doc
 %defattr(-,root,root,-)
