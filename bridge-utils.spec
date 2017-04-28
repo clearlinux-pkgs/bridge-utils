@@ -4,7 +4,7 @@
 #
 Name     : bridge-utils
 Version  : 1.6
-Release  : 12
+Release  : 13
 URL      : https://www.kernel.org/pub/linux/utils/net/bridge-utils/bridge-utils-1.6.tar.xz
 Source0  : https://www.kernel.org/pub/linux/utils/net/bridge-utils/bridge-utils-1.6.tar.xz
 Summary  : No detailed summary available
@@ -12,7 +12,6 @@ Group    : Development/Tools
 License  : GPL-2.0 GPL-2.0+
 Requires: bridge-utils-bin
 Requires: bridge-utils-doc
-Patch1: bridge-utils-1.5-linux_3.8_fix-1.patch
 
 %description
 This version of the bridge utilities is for Linux 2.4 and 2.6,
@@ -36,16 +35,15 @@ doc components for the bridge-utils package.
 
 %prep
 %setup -q -n bridge-utils-1.6
-%patch1 -p1
 
 %build
 export LANG=C
-export SOURCE_DATE_EPOCH=1493401589
+export SOURCE_DATE_EPOCH=1493401896
 %reconfigure --disable-static
 make V=1  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1493401589
+export SOURCE_DATE_EPOCH=1493401896
 rm -rf %{buildroot}
 %make_install
 
