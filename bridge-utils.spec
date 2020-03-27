@@ -4,7 +4,7 @@
 #
 Name     : bridge-utils
 Version  : 1.6
-Release  : 17
+Release  : 18
 URL      : https://www.kernel.org/pub/linux/utils/net/bridge-utils/bridge-utils-1.6.tar.xz
 Source0  : https://www.kernel.org/pub/linux/utils/net/bridge-utils/bridge-utils-1.6.tar.xz
 Summary  : No detailed summary available
